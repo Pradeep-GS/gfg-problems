@@ -1,0 +1,19 @@
+class Solution {
+    static void rotateArr(int arr[], int d) {
+        int n = arr.length;
+        if (n == 0) return;
+        d = d % n; 
+        rotate(arr,0,d-1);
+        rotate(arr,d,arr.length-1);
+        rotate(arr,0,arr.length-1);
+    }
+    static void rotate(int arr[],int l,int r){
+        while(l<=r){
+            int temp = arr[l];
+            arr[l]=arr[r];
+            arr[r]=temp;
+            l++;
+            r--;
+        }
+    }
+}
