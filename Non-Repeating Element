@@ -1,0 +1,17 @@
+// User function Template for Java
+
+class Solution {
+    public int firstNonRepeating(int[] arr) {
+        
+        HashMap<Integer,Integer> hmap = new HashMap<>();
+        for(int i:arr){
+            hmap.put(i, hmap.getOrDefault(i, 0) + 1);
+        }
+        for (int i : arr) {
+            if (hmap.get(i) == 1) {
+                return i;
+            }
+        }
+        return 0;
+    }
+}
